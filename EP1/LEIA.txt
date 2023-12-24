@@ -1,0 +1,4 @@
+EP1:
+Parte 1 = EP1_parte.1 (não foi testado, só funciona no UNIX)
+Parte 2 = Main.java, ProcessosFilho.java (testado e correto)
+Parte 3 = EP1_parte3.c (falta errors.h)

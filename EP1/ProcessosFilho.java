@@ -1,3 +1,4 @@
+package EP1;
 class ProcessosFilho extends Thread{
     private int numThread;
 

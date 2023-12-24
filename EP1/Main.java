@@ -1,3 +1,4 @@
+package EP1;
 public class Main extends Thread{
     public static void main(String[] args) {
         System.out.println("Hello World, Processo pai"); //Processo pai
