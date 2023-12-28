@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include "errors.h"
 
+
 #define numThreads 2
 
 int vez = 0;
@@ -27,7 +28,7 @@ void *P0(void *arg) {
 }
 
 void *P1(void *arg) {
-    while (TRUE) {
+    while (1) {
         while (vez != 1); // Espera ociosa
 
         // Seção crítica

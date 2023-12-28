@@ -1,0 +1,3 @@
+Para executar basta digitar no terminal:
+
+gcc -pthread ep3.c -o ep3
