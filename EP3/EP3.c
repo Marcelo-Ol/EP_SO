@@ -7,7 +7,7 @@
 int contador = 0;
 pthread_mutex_t mutex;
 
-void *funcao_thread(void *thread_id) {
+void *secao_critica(void *thread_id) {
     int tid = *((int *)thread_id);
 
     for (int i = 0; i < 5; ++i) { // 5 é o número de vezes que cada thread executurá a seção critica antes de encerrar
@@ -36,7 +36,7 @@ int main() {
     // Cria threads
     for (int i = 0; i < numThreads; ++i) {
         thread_ids[i] = i;
-        pthread_create(&threads[i], NULL, funcao_thread, (void *)&thread_ids[i]);
+        pthread_create(&threads[i], NULL, secao_critica, (void *)&thread_ids[i]);
     }
 
     // Aguarda a conclusão das threads
@@ -46,10 +46,5 @@ int main() {
 
     // Destroi o mutex
     pthread_mutex_destroy(&mutex);
-
-    // Esperar que o usuário pressione uma tecla antes de encerrar
-    printf("Pressione qualquer tecla para sair...\n");
-    getchar(); // Aguarda uma entrada do usuário
-    
     return 0;
 }

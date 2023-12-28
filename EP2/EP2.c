@@ -2,7 +2,7 @@
 #include <pthread.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "errors.h"
+//#include "errors.h"
 
 
 #define numThreads 2

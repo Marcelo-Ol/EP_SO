@@ -1,13 +1,13 @@
 #include <pthread.h>
 #include <stdio.h>
-//#include "errors.h"
+#include "errors.h"
 
 #define numThread 10
 
 void *runner(void *parametro); //Processo filho
 
-int main(){
-    pthread_t tid[numThread]; 
+int main() {
+    pthread_t tid[numThread];
     pthread_attr_t attr;
 
     pthread_attr_init(&attr);
@@ -18,14 +18,13 @@ int main(){
             handle_error_en(resultado, "Erro ao criar a thread");
         }
     }
-    
+
     for(int i = 0; i < numThread; i++){
         int resultado = pthread_join(tid[i], NULL);
         if (resultado != 0) {
             handle_error_en(resultado, "Erro ao aguardar a thread");
         }
     }
-    
 
     printf("Hello world, Processo pai\n"); //Processo pai
 
